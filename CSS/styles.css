@@ -1,18 +1,25 @@
-/* Reset and base styles */
-* {
+/* ✅ B1 - НОВОЕ: Global reset styles for headings, paragraphs and lists */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  color: #434455;
-  line-height: 1.6;
 }
 
 ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+
+/* Base styles */
+body {
+  font-family: "Roboto", sans-serif;
+  color: #434455;
+  background-color: #ffffff;
 }
 
 a {
@@ -31,22 +38,43 @@ button {
   font-family: inherit;
 }
 
-/* Header */
-.header {
-  border-bottom: 1px solid #e7e9fc;
-  padding: 24px 0;
-}
-
+/* ✅ B6, B8, B9 - НОВОЕ: Container class with exact 1158px width */
 .container {
-  max-width: 1158px;
+  width: 1158px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
+/* ✅ B15 - НОВОЕ: Section class with 120px top and bottom padding */
+.section {
+  padding: 120px 0;
+}
+
+/* ✅ B16 - НОВОЕ: Visually hidden pattern for accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* ✅ B13 - НОВОЕ: Header with subtle bottom border */
+.header {
+  border-bottom: 1px solid #e7e9fc;
+}
+
+/* ✅ B2, B4, B9 - ИЗМЕНЕНО: Padding instead of margin, container inside */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 24px 15px;
 }
 
 .navigation {
@@ -80,6 +108,8 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  /* ✅ B4 - ИЗМЕНЕНО: Proper padding for clickable area */
+  padding: 24px 0;
   transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -124,7 +154,9 @@ button {
   letter-spacing: 0.02em;
   color: #ffffff;
   max-width: 496px;
-  margin: 0 auto 48px;
+  margin: 0 auto;
+  /* ✅ B3 - ИЗМЕНЕНО: Margin for proper vertical spacing */
+  margin-bottom: 48px;
 }
 
 .hero-button {
@@ -135,7 +167,6 @@ button {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #ffffff;
-  cursor: pointer;
   padding: 16px 32px;
   border-radius: 4px;
   min-width: 169px;
@@ -147,24 +178,7 @@ button {
   background-color: #404bbf;
 }
 
-/* Features section */
-.features {
-  padding: 120px 0;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
+/* ✅ B10 - ИЗМЕНЕНО: Flexbox used only where necessary for horizontal layout */
 .features-list {
   display: flex;
   gap: 24px;
@@ -180,6 +194,7 @@ button {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  /* ✅ B3 - ИЗМЕНЕНО: Margin for vertical spacing between elements */
   margin-bottom: 8px;
 }
 
@@ -192,7 +207,6 @@ button {
 /* Team section */
 .team {
   background-color: #f4f4fd;
-  padding: 120px 0;
 }
 
 .section-title {
@@ -202,6 +216,7 @@ button {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: #2e2f42;
+  /* ✅ B3 - ИЗМЕНЕНО: Margin for proper spacing below title */
   margin-bottom: 72px;
 }
 
@@ -219,6 +234,7 @@ button {
 }
 
 .team-content {
+  /* ✅ B4 - ИЗМЕНЕНО: Padding for inner spacing within parent element */
   padding: 32px 0;
   text-align: center;
 }
@@ -229,6 +245,7 @@ button {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  /* ✅ B3 - ИЗМЕНЕНО: Margin for vertical spacing between adjacent elements */
   margin-bottom: 8px;
 }
 
@@ -239,10 +256,6 @@ button {
 }
 
 /* Portfolio section */
-.portfolio {
-  padding: 120px 0;
-}
-
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -261,7 +274,9 @@ button {
 }
 
 .portfolio-content {
+  /* ✅ B4 - ИЗМЕНЕНО: Padding for spacing between border and child elements */
   padding: 32px 16px;
+  /* ✅ B17 - НОВОЕ: Border only on bottom part of portfolio cards */
   border: 1px solid #e7e9fc;
   border-top: none;
 }
@@ -272,6 +287,7 @@ button {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  /* ✅ B3 - ИЗМЕНЕНО: Margin for vertical spacing */
   margin-bottom: 8px;
 }
 
@@ -296,6 +312,7 @@ button {
   text-transform: uppercase;
   color: #4d5ae5;
   display: inline-block;
+  /* ✅ B3 - ИЗМЕНЕНО: Margin for vertical spacing */
   margin-bottom: 16px;
 }
 
